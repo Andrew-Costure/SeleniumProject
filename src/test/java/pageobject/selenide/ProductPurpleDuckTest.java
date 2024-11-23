@@ -1,13 +1,6 @@
-package pageobject;
+package pageobject.selenide;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
-
-import java.time.Duration;
 
 public class ProductPurpleDuckTest extends TestBase {
     String expectedInformationAboutPurpleDuck = "Lorem ipsum dolor sit amet, " +
@@ -23,13 +16,9 @@ public class ProductPurpleDuckTest extends TestBase {
 
     @Test
     public void CheckThatPurpleDuckHaveTrueInformation(){
-        ProductPurpleDuckPage productPage = new ProductPurpleDuckPage(driver);
-        SoftAssert softAssert = new SoftAssert();
+        ProductPurpleDuckPage productPage = new ProductPurpleDuckPage();
         productPage.clickProductPurpleDuck();
-        softAssert.assertTrue(productPage.realInformationAboutPurpleDuckIsDisplayed(),
-                "Information About Purple Duck is not displayed");
-        softAssert.assertEquals(productPage.getRealInformationAboutPurpleDuckText(),
-                expectedInformationAboutPurpleDuck);
-        softAssert.assertAll();
+        productPage.realInformationAboutPurpleDuckIsDisplayed();
+        productPage.getRealInformationAboutPurpleDuckText(expectedInformationAboutPurpleDuck);
     }
 }
