@@ -16,11 +16,11 @@ public class TestWebsiteLitecart {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://litecart.stqa.ru/en/");
-        WebElement emailField = driver.findElement(By.cssSelector("[name=email]"));
-        WebElement passwordField = driver.findElement(By.cssSelector("[name=password]"));
+        WebElement emailField = driver.findElement(By.name("email"));
+        WebElement passwordField = driver.findElement(By.name("password"));
         emailField.sendKeys("test@gmail.com");
         passwordField.sendKeys("1234");
-        driver.findElement(By.cssSelector("[name=login]")).click();
+        driver.findElement(By.name("login")).click();
         String noticeSuccess = "You are now logged in as Olya Cich.";
         WebElement validStringWhenUserLogin = driver.findElement(By.cssSelector(".notice.success"));
         Assert.assertEquals(validStringWhenUserLogin.getText(), noticeSuccess);
@@ -33,14 +33,14 @@ public class TestWebsiteLitecart {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://litecart.stqa.ru/en/");
-        WebElement emailField = driver.findElement(By.cssSelector("[name=email]"));
-        WebElement passwordField = driver.findElement(By.cssSelector("[name=password]"));
+        WebElement emailField = driver.findElement(By.name("email"));
+        WebElement passwordField = driver.findElement(By.name("password"));
         emailField.sendKeys("test@gmail.co");
         passwordField.sendKeys("1234");
-        driver.findElement(By.cssSelector("[name=login]")).click();
+        driver.findElement(By.name("login")).click();
         String noticeErrors = "Wrong password or the account is disabled, or does not exist";
-        WebElement invalidStringWhenUserLogin = driver.findElement(By.cssSelector(".notice.errors"));
-        Assert.assertEquals(invalidStringWhenUserLogin.getText(), noticeErrors);
+        WebElement validStringWhenUserNotLogin = driver.findElement(By.cssSelector(".notice.errors"));
+        Assert.assertEquals(validStringWhenUserNotLogin.getText(), noticeErrors);
         driver.quit();
     }
 
