@@ -1,13 +1,12 @@
-package pageobject;
+package pageobject.selenide;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
-import java.time.Duration;
+@Epic("Checking the product page")
+@Feature("Product page of purple duck")
 
 public class ProductPurpleDuckTest extends TestBase {
     String expectedInformationAboutPurpleDuck = "Lorem ipsum dolor sit amet, " +
@@ -21,15 +20,13 @@ public class ProductPurpleDuckTest extends TestBase {
             "Integer imperdiet volutpat ante, sed venenatis urna volutpat a. " +
             "Proin justo massa, convallis vitae consectetur sit amet, facilisis id libero.";
 
+    @Description("The test goes to the product page purple duck and checks that the product " +
+            "information is correct")
     @Test
-    public void CheckThatPurpleDuckHaveTrueInformation(){
-        ProductPurpleDuckPage productPage = new ProductPurpleDuckPage(driver);
-        SoftAssert softAssert = new SoftAssert();
+    public void checkThatPurpleDuckHaveTrueInformation(){
+        ProductPurpleDuckPage productPage = new ProductPurpleDuckPage();
         productPage.clickProductPurpleDuck();
-        softAssert.assertTrue(productPage.realInformationAboutPurpleDuckIsDisplayed(),
-                "Information About Purple Duck is not displayed");
-        softAssert.assertEquals(productPage.getRealInformationAboutPurpleDuckText(),
-                expectedInformationAboutPurpleDuck);
-        softAssert.assertAll();
+        productPage.realInformationAboutPurpleDuckIsDisplayed();
+        productPage.getRealInformationAboutPurpleDuckText(expectedInformationAboutPurpleDuck);
     }
 }
