@@ -1,6 +1,12 @@
 package pageobject.selenide;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.testng.annotations.Test;
+
+@Epic("Checking the product page")
+@Feature("Product page of purple duck")
 
 public class ProductPurpleDuckTest extends TestBase {
     String expectedInformationAboutPurpleDuck = "Lorem ipsum dolor sit amet, " +
@@ -14,8 +20,10 @@ public class ProductPurpleDuckTest extends TestBase {
             "Integer imperdiet volutpat ante, sed venenatis urna volutpat a. " +
             "Proin justo massa, convallis vitae consectetur sit amet, facilisis id libero.";
 
+    @Description("The test goes to the product page purple duck and checks that the product " +
+            "information is correct")
     @Test
-    public void CheckThatPurpleDuckHaveTrueInformation(){
+    public void checkThatPurpleDuckHaveTrueInformation(){
         ProductPurpleDuckPage productPage = new ProductPurpleDuckPage();
         productPage.clickProductPurpleDuck();
         productPage.realInformationAboutPurpleDuckIsDisplayed();
