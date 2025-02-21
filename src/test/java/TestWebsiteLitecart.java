@@ -7,7 +7,6 @@
 //import org.openqa.selenium.support.ui.WebDriverWait;
 //import org.testng.Assert;
 //import org.testng.annotations.Test;
-//
 //import java.time.Duration;
 //
 //public class TestWebsiteLitecart {
@@ -25,9 +24,7 @@
 //        WebElement validStringWhenUserLogin = driver.findElement(By.cssSelector(".notice.success"));
 //        Assert.assertEquals(validStringWhenUserLogin.getText(), noticeSuccess);
 //        driver.quit();
-//
 //    }
-//
 //    @Test
 //    public void invalidEmailAndCorrectPassword(){
 //        WebDriver driver = new ChromeDriver();
