@@ -77,19 +77,4 @@
 //
 //    }
 //
-//    @Test
-//    public void AddToCart1Duck(){
-//        WebDriver driver = new ChromeDriver();
-//        driver.get("https://litecart.stqa.ru/en/");
-//        driver.manage().window().maximize();
-//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
-//        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(2));
-//        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(2));
-//        driver.findElement(By.cssSelector("[title='Purple Duck']")).click();
-//        WebElement addToCartButton = driver.findElement(By.name("add_cart_product"));
-//        addToCartButton.click();
-//        WebElement cartQuantityLabel = driver.findElement(By.cssSelector("span[class='quantity']"));
-//        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(2));
-//        wait.until(ExpectedConditions.textToBe(By.cssSelector("span[class='quantity']"), "1"));
-//        Assert.assertEquals(cartQuantityLabel.getText(), "1");
-//    }
+
