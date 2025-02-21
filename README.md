@@ -1,1 +1,1 @@
-#selenium testing sample script.
+selenium testing sample script.
