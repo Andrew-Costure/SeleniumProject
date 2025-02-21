@@ -93,27 +93,3 @@
 //        wait.until(ExpectedConditions.textToBe(By.cssSelector("span[class='quantity']"), "1"));
 //        Assert.assertEquals(cartQuantityLabel.getText(), "1");
 //    }
-//
-//    @Test
-//    public void CheckThatPurpleDuckHaveTrueInformation(){
-//        WebDriver driver = new ChromeDriver();
-//        driver.manage().window().maximize();
-//        driver.get("https://litecart.stqa.ru/en/");
-//        WebElement purpleDuck = driver.findElement(By.cssSelector("[title='Purple Duck']"));
-//        purpleDuck.click();
-//        String expectedInformationAboutPurpleDuck = "Lorem ipsum dolor sit amet, " +
-//                "consectetur adipiscing elit. Suspendisse sollicitudin ante massa, " +
-//                "eget ornare libero porta congue. Cras scelerisque dui non consequat " +
-//                "sollicitudin. Sed pretium tortor ac auctor molestie. Nulla facilisi. " +
-//                "Maecenas pulvinar nibh vitae lectus vehicula semper. Donec et aliquet velit. " +
-//                "Curabitur non ullamcorper mauris. In hac habitasse platea dictumst. " +
-//                "Phasellus ut pretium justo, sit amet bibendum urna. Maecenas sit amet arcu " +
-//                "pulvinar, facilisis quam at, viverra nisi. Morbi sit amet adipiscing ante. " +
-//                "Integer imperdiet volutpat ante, sed venenatis urna volutpat a. " +
-//                "Proin justo massa, convallis vitae consectetur sit amet, facilisis id libero.";
-//        WebElement realInformationAboutPurpleDuck = driver.findElement(By.id("tab-information"));
-//        Assert.assertEquals(realInformationAboutPurpleDuck.getText(),
-//                expectedInformationAboutPurpleDuck);    }
-//
-//
-//}
